@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic tac toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,51 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic tac toe</h1>
+
+      <form id="sign-up">
+    <input required type="email" name="credentials[email]" placeholder="Email">
+    <input required type="password" name="credentials[password]" placeholder="Password">
+    <input required type="password" name="credentials[password_confirmation]" placeholder="Password confirmation">
+    <input type="submit" value="Sign up!">
+  </form>
+
+  <form id="sign-in">
+      <input type="email" name="credentials[email]" placeholder="Email">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <input type="submit" value="Sign in!">
+    </form>
+
+    <form id="change-password">
+  <input type="password" name="passwords[old]" placeholder="Old password">
+  <input type="password" name="passwords[new]" placeholder="New password">
+  <input type="submit" value="Change password">
+</form>
+
+<form id="sign-out">
+    <input type="submit" value="Sign out!">
+  </form>
+
+<div class="container">
+
+        <div class="row d-flex justify-content-center">
+          <div id="spaceZero" class="col-2 box">0</div>
+          <div id="spaceOne" class="col-2 box">1</div>
+          <div id="spaceTwo" class="col-2 box">2</div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div id="spaceThree" class="col-2 box">3</div>
+          <div id="spaceFour" class="col-2 box">4</div>
+          <div id="spaceFive" class="col-2 box">5</div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div id="spaceSix" class="col-2 box">6</div>
+          <div id="spaceSeve" class="col-2 box">7</div>
+          <div id="spaceEight" class="col-2 box">8</div>
+        </div>
+      </div>
+
     </body>
 </html>
