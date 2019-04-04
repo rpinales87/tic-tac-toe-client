@@ -18,13 +18,13 @@
     <input required type="email" name="credentials[email]" placeholder="Email">
     <input required type="password" name="credentials[password]" placeholder="Password">
     <input required type="password" name="credentials[password_confirmation]" placeholder="Password confirmation">
-    <input type="submit" value="Sign up!">
+    <input type="submit" value="Sign up">
   </form>
 
   <form id="sign-in">
       <input type="email" name="credentials[email]" placeholder="Email">
       <input type="password" name="credentials[password]" placeholder="Password">
-      <input type="submit" value="Sign in!">
+      <input type="submit" value="Sign in">
     </form>
 
     <form id="change-password">
@@ -34,29 +34,33 @@
 </form>
 
 <form id="sign-out">
-    <input type="submit" value="Sign out!">
+    <input type="submit" value="Sign out">
   </form>
 
 <div class="container">
 
         <div class="row d-flex justify-content-center">
-          <div id="spaceZero" class="col-2 box"></div>
-          <div id="spaceOne" class="col-2 box"></div>
-          <div id="spaceTwo" class="col-2 box"></div>
+          <div data-id="0" class="col-2 box"></div>
+          <div data-id="1" class="col-2 box"></div>
+          <div data-id="2" class="col-2 box"></div>
         </div>
 
         <div class="row d-flex justify-content-center">
-          <div id="spaceThree" class="col-2 box"></div>
-          <div id="spaceFour" class="col-2 box"></div>
-          <div id="spaceFive" class="col-2 box"></div>
+          <div data-id="3" class="col-2 box"></div>
+          <div data-id="4" class="col-2 box"></div>
+          <div data-id="5" class="col-2 box"></div>
         </div>
 
         <div class="row d-flex justify-content-center">
-          <div id="spaceSix" class="col-2 box"></div>
-          <div id="spaceSeve" class="col-2 box"></div>
-          <div id="spaceEight" class="col-2 box"></div>
+          <div data-id="6" class="col-2 box"></div>
+          <div data-id="7" class="col-2 box"></div>
+          <div data-id="8" class="col-2 box"></div>
         </div>
       </div>
+
+      <form id="restart-game">
+          <input type="submit" value="Restart game">
+        </form>
 
     </body>
 </html>
