@@ -1,15 +1,16 @@
 #!/bin/bash
 
-curl --include --request POST "https://tic-tac-toe-wdi.herokuapp.comm/games" \
+curl --include --request POST "https://tic-tac-toe-wdi.herokuapp.com/games" \
   --header "Content-type: application/json" \
+  --header "Authorization: Token token=${TOKEN}"\
   --data '{
   "game": {
-    "id": 3,
+    "id": " ",
     "cells": ["","","","","","","","",""],
     "over": false,
     "player_x": {
-      "id": 1,
-      "email": "and@and.com"
+      "id": " ",
+      "email": " "
     },
     "player_o": null
   }

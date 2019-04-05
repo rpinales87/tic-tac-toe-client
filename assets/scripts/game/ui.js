@@ -1,10 +1,6 @@
 
 const createSuccess = function (response) {
-  $('#book-display').html(`
-    <h4>Title: ${response.book.title}</h4>
-    <p>Author: ${response.book.author}<p>
-    <br>
-    `)
+  console.log('response is:', response)
 }
 
 const createFaliure = function (response) {
@@ -12,7 +8,18 @@ const createFaliure = function (response) {
   console.log('err: response')
 }
 
+const updateSuccess = function (response) {
+  console.log('Update success:', response)
+}
+
+const updateFaliure = function (response) {
+  $('#message').text('Something went wrong couldn\'t update the play.')
+  console.log('err: response')
+}
+
 module.exports = {
   createSuccess,
-  createFaliure
+  createFaliure,
+  updateSuccess,
+  updateFaliure
 }

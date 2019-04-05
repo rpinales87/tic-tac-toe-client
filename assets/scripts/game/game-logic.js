@@ -1,3 +1,4 @@
+const events = require('./events')
 
 let currentPlayer = 'x'
 
@@ -62,9 +63,12 @@ const winner = function (event) {
 const addHandlers = function () {
   $('.box').on('click', onPlay)
   $('.box').on('click', winner)
+  $('#start-game').on('submit', events.onCreateGame)
+  $('.box').on('click', events.onUpdateGame)
 }
 
 module.exports = {
   addHandlers,
-  winner
+  winner,
+  onPlay
 }

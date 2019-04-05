@@ -1,15 +1,21 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
-const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onCreateGame = function (event) {
   event.preventDefault()
-  const formData = getFormFields(event.target)
-  api.createGame(formData)
+  api.createGame()
     .then(ui.createSuccess)
     .catch(ui.createFaliure)
 }
 
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  api.updateGame()
+    .then(ui.updateSuccess)
+    .catch(ui.updateFaliure)
+}
+
 module.exports = {
-  onCreateGame
+  onCreateGame,
+  onUpdateGame
 }
