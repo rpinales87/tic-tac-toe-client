@@ -17,9 +17,20 @@ const updateFaliure = function (response) {
   console.log('err: response')
 }
 
+const gameOverSuccess = function (response) {
+  console.log('game over success:', response)
+}
+
+const gameOverFaliure = function (response) {
+  $('#message').text('Something went wrong couldn\'t end the game.')
+  console.log('err: response')
+}
+
 module.exports = {
   createSuccess,
   createFaliure,
   updateSuccess,
-  updateFaliure
+  updateFaliure,
+  gameOverSuccess,
+  gameOverFaliure
 }

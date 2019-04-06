@@ -1,3 +1,4 @@
+EMAIL="pe@test.com" PASSWORD="TEST"
 
 curl "https://tic-tac-toe-wdi.herokuapp.com/sign-in" \
   --include \

@@ -1,3 +1,4 @@
+EMAIL="pe@test.com" PASSWORD="TEST" CON_PASSWORD="TEST"
 
 curl "https://tic-tac-toe-wdi.herokuapp.com/sign-up" \
   --include \
@@ -7,7 +8,7 @@ curl "https://tic-tac-toe-wdi.herokuapp.com/sign-up" \
     "credentials": {
           "email": "'"${EMAIL}"'",
           "password": "'"${PASSWORD}"'",
-          "password_confirmation": "'"${PASSWORD}"'"
+          "password_confirmation": "'"${CON_PASSWORD}"'"
         }
   }'
 
