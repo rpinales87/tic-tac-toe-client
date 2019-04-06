@@ -1,14 +1,15 @@
 
-curl --include --request PATCH "https://tic-tac-toe-wdi.herokuapp.com/${ID}" \
+curl --include --request PATCH "https://tic-tac-toe-wdi.herokuapp.com/games/${ID}" \
   --header "Content-type: application/json" \
+--header "Authorization: Token token=${TOKEN}" \
   --data '{
-  "game": {
-    "cell": {
-      "index": ,
-      "value": " "
-    },
-    "over": false
-  }
-}'
+    "game": {
+      "cell": {
+        "index": "'"${INDEX}"'",
+        "value": "'"${VALUE}"'"
+      },
+      "over": "'"${OVER}"'"
+    }
+  }'
 
 echo

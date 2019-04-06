@@ -20,7 +20,7 @@ const onPlay = function (event) {
     $('.message').text('X\'s turn')
     console.log('o played')
     currentPlayer = 'x'
-  } else if ($(event.target).text() === 'x' || $(event.target).text() === 'o') {
+  } else if ($(event.target).text() !== '') {
     $('.message').text('Invalid move')
     console.log('Invalid move!')
   }
@@ -65,6 +65,20 @@ const addHandlers = function () {
   $('.box').on('click', winner)
   $('#start-game').on('submit', events.onCreateGame)
   $('.box').on('click', events.onUpdateGame)
+  $('.container').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#start-game').hide()
+  $('#sign-in').submit(function (e) {
+    $('#sign-in').hide()
+    $('#sign-up').hide()
+    $('#sign-out').show()
+    $('#change-password').show()
+    $('#start-game').show()
+  })
+  $('#start-game').submit(function (e) {
+    $('.container').show()
+  })
 }
 
 module.exports = {
