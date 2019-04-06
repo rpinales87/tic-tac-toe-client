@@ -68,7 +68,6 @@ const addHandlers = function () {
   $('.box').on('click', onPlay)
   $('.box').on('click', winner)
   $('#start-game').on('submit', events.onCreateGame)
-//  $('.box').on('click', events.onUpdateGame)
   $('.container').hide()
   $('#change-password').hide()
   $('#sign-out').hide()
