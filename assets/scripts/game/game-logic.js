@@ -1,5 +1,5 @@
 const events = require('./events')
-const store = require('../store')
+// const store = require('../store')
 
 let currentPlayer = 'x'
 
@@ -80,6 +80,9 @@ const addHandlers = () => {
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#start-game').hide()
+  $('#sign-up').submit(e => {
+    $('.message').text('Sign up success').hide(3000)
+  })
   $('#sign-in').submit(e => {
     $('#sign-in').hide()
     $('#sign-up').hide()
@@ -87,6 +90,7 @@ const addHandlers = () => {
     $('#game-history').show()
     $('#change-password').show()
     $('#start-game').show()
+    $('.message').text('Sign in success').hide(3000)
   })
   $('#start-game').submit(e => {
     $('.container').show()
@@ -94,18 +98,18 @@ const addHandlers = () => {
     $('.message').empty().show()
     gameBoard = ['', '', '', '', '', '', '', '', '']
     console.log(gameBoard)
-  //  $('.box').on('click', onPlay)
+    // $('.box').on('click', onPlay)
   })
   $('#sign-out').submit(e => {
+    $('.message').text('Sign out success').hide(3000)
     $('#change-password').hide()
     $('#start-game').hide()
     $('#sign-in').show()
     $('#sign-up').show()
     $('.container').hide()
     $('#sign-out').hide()
-    $('.message').empty()
+    // $('.message').empty()
     $('#game-history').hide()
-
   })
 }
 
