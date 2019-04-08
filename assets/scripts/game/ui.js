@@ -26,11 +26,22 @@ const gameOverFaliure = function (response) {
   console.log('err: response')
 }
 
+const getGamesSuccess = function (response) {
+  console.log('get games success:', response)
+}
+
+const getGamesFaliure = function (response) {
+  $('#message').text('Something went wrong couldn\'t get the games.')
+  console.log('err: response')
+}
+
 module.exports = {
   createSuccess,
   createFaliure,
   updateSuccess,
   updateFaliure,
   gameOverSuccess,
-  gameOverFaliure
+  gameOverFaliure,
+  getGamesSuccess,
+  getGamesFaliure
 }

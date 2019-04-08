@@ -2,8 +2,8 @@
 const store = require('../store')
 const config = require('../config')
 
-const createGame = function (data) {
-//  console.log('data is:', data)
+const createGame = (data) => {
+  console.log('data is:', data)
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -14,9 +14,9 @@ const createGame = function (data) {
   })
 }
 
-const playerMove = function (index, currentPlayer) {
+const playerMove = (index, currentPlayer) => {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.gameId,
+    url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       'Authorization': 'Token token=' + store.user.token
@@ -34,7 +34,7 @@ const playerMove = function (index, currentPlayer) {
 
 const gameOver = () => {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.gameId,
+    url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       'Authorization': 'Token token=' + store.user.token
@@ -47,8 +47,21 @@ const gameOver = () => {
   })
 }
 
+const getGames = (data) => {
+//  console.log('data is:', data)
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    },
+    data: ''
+  })
+}
+
 module.exports = {
   createGame,
   playerMove,
-  gameOver
+  gameOver,
+  getGames
 }

@@ -1,22 +1,25 @@
 const events = require('./events')
+const store = require('../store')
 
 let currentPlayer = 'x'
 
-const gameBoard = ['', '', '', '', '', '', '', '', '']
-// console.log(gameBoard)
+let gameBoard = ['', '', '', '', '', '', '', '', '']
+console.log(gameBoard)
 
-const onPlay = function (event) {
+const onPlay = event => {
   const index = $(event.target).data('id')
   // console.log(index)
   gameBoard[index] = currentPlayer
-  // console.log(gameBoard)
+  console.log(gameBoard)
   if (currentPlayer === 'x' && $(event.target).text() === '') {
     $(event.target).text(currentPlayer)
+    events.playerMove(index, currentPlayer)
     $('.message').text('O\'s turn')
     // console.log('x played')
     currentPlayer = 'o'
   } else if (currentPlayer === 'o' && $(event.target).text() === '') {
     $(event.target).text(currentPlayer)
+    events.playerMove(index, currentPlayer)
     $('.message').text('X\'s turn')
     // console.log('o played')
     currentPlayer = 'x'
@@ -24,10 +27,10 @@ const onPlay = function (event) {
     $('.message').text('Invalid move')
     return 'Invalid move!'
   }
-  events.playerMove(index, currentPlayer)
+  // events.playerMove(index, currentPlayer)
 }
 
-const winner = function (event) {
+const winner = event => {
   if ((gameBoard[0] === 'x' && gameBoard[1] === 'x' && gameBoard[2] === 'x') ||
       (gameBoard[3] === 'x' && gameBoard[4] === 'x' && gameBoard[5] === 'x') ||
       (gameBoard[6] === 'x' && gameBoard[7] === 'x' && gameBoard[8] === 'x') ||
@@ -64,32 +67,45 @@ const winner = function (event) {
   }
 }
 
-const addHandlers = function () {
+const addHandlers = () => {
   $('.box').on('click', onPlay)
   $('.box').on('click', winner)
   $('#start-game').on('submit', events.onCreateGame)
+  $('#game-history').on('submit', events.getGames)
+  $('#game-history').hide()
+  // $('#game-history').submit(e => {
+  //   $('.message').text('You\'ve played ' + store.games.length + ' games.')
+  // })
   $('.container').hide()
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#start-game').hide()
-  $('#sign-in').submit(function (e) {
+  $('#sign-in').submit(e => {
     $('#sign-in').hide()
     $('#sign-up').hide()
     $('#sign-out').show()
+    $('#game-history').show()
     $('#change-password').show()
     $('#start-game').show()
   })
-  $('#start-game').submit(function (e) {
+  $('#start-game').submit(e => {
     $('.container').show()
+    $('.box').empty()
+    $('.message').empty().show()
+    gameBoard = ['', '', '', '', '', '', '', '', '']
+    console.log(gameBoard)
+  //  $('.box').on('click', onPlay)
   })
-  $('#sign-out').submit(function (e) {
+  $('#sign-out').submit(e => {
     $('#change-password').hide()
     $('#start-game').hide()
     $('#sign-in').show()
     $('#sign-up').show()
     $('.container').hide()
     $('#sign-out').hide()
-    $('.message').hide()
+    $('.message').empty()
+    $('#game-history').hide()
+
   })
 }
 

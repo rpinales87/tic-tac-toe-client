@@ -2,6 +2,7 @@
 <html>
     <head>
       <title>Tic tac toe</title>
+      <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,7 +13,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic tac toe</h1>
+      <h1 class="d-flex justify-content-center">Tic tac toe</h1>
 
       <form id="sign-up">
     <input required type="email" name="credentials[email]" placeholder="Email">
@@ -37,27 +38,32 @@
     <input type="submit" value="Sign out">
   </form>
 
+  <form id="game-history">
+      <input type="submit" value="See games history">
+    </form>
+
+
 <h2 class="message"></h2>
 
-<!-- <div class="container"> -->
-        <!-- <div class="row d-flex justify-content-center"> -->
-          <!-- <div data-id="0" class="col-2 box"></div> -->
-          <!-- <div data-id="1" class="col-2 box"></div> -->
-          <!-- <div data-id="2" class="col-2 box"></div> -->
-        <!-- </div> -->
-<!--  -->
-        <!-- <div class="row d-flex justify-content-center"> -->
-          <!-- <div data-id="3" class="col-2 box"></div> -->
-          <!-- <div data-id="4" class="col-2 box"></div> -->
-          <!-- <div data-id="5" class="col-2 box"></div> -->
-        <!-- </div> -->
-<!--  -->
-        <!-- <div class="row d-flex justify-content-center"> -->
-          <!-- <div data-id="6" class="col-2 box"></div> -->
-          <!-- <div data-id="7" class="col-2 box"></div> -->
-          <!-- <div data-id="8" class="col-2 box"></div> -->
-        <!-- </div> -->
-      <!-- </div> -->
+<!-- <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div data-id="0" class="col-2 box"></div>
+          <div data-id="1" class="col-2 box"></div>
+          <div data-id="2" class="col-2 box"></div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div data-id="3" class="col-2 box"></div>
+          <div data-id="4" class="col-2 box"></div>
+          <div data-id="5" class="col-2 box"></div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div data-id="6" class="col-2 box"></div>
+          <div data-id="7" class="col-2 box"></div>
+          <div data-id="8" class="col-2 box"></div>
+        </div>
+      </div> -->
 
       <div class="container embed-responsive embed-responsive-1by1 gamearea">
         <div class="embed-responsive-item gameboard">
