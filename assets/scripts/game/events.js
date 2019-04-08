@@ -5,6 +5,7 @@ const store = require('../store')
 // create game and store
 const onCreateGame = event => {
   event.preventDefault()
+
   api.createGame()
     .then(response => {
       ui.createSuccess()

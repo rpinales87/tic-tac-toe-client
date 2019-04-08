@@ -1,6 +1,9 @@
+// const api = require('./api')
+// const gameLogic = require('./game-logic.js')
 
 const createSuccess = function (response) {
-  console.log('response is:', response)
+  // api.getGames()
+  console.log('createSuccess is:', response)
 }
 
 const createFaliure = function (response) {

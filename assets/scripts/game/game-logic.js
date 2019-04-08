@@ -2,11 +2,15 @@ const events = require('./events')
 // const store = require('../store')
 
 let currentPlayer = 'x'
+let gameOver = false
 
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 console.log(gameBoard)
 
 const onPlay = event => {
+  if (gameOver === true) {
+    return
+  }
   const index = $(event.target).data('id')
   // console.log(index)
   gameBoard[index] = currentPlayer
@@ -25,7 +29,7 @@ const onPlay = event => {
     currentPlayer = 'x'
   } else if ($(event.target).text() !== '') {
     $('.message').text('Invalid move')
-    return 'Invalid move!'
+    // return 'Invalid move!'
   }
   // events.playerMove(index, currentPlayer)
 }
@@ -40,8 +44,10 @@ const winner = event => {
       (gameBoard[1] === 'x' && gameBoard[4] === 'x' && gameBoard[7] === 'x') ||
       (gameBoard[2] === 'x' && gameBoard[5] === 'x' && gameBoard[8] === 'x')) {
     $('.message').text('X Won!!').hide(3000)
+    currentPlayer = 'x'
     events.gameOver()
-    $('.box').off('click', onPlay)
+    gameOver = true
+  //  $('.box').off('click', onPlay)
     // console.log('X wins!')
   } else if (
     (gameBoard[0] === 'o' && gameBoard[1] === 'o' && gameBoard[2] === 'o') ||
@@ -53,18 +59,25 @@ const winner = event => {
     (gameBoard[1] === 'o' && gameBoard[4] === 'o' && gameBoard[7] === 'o') ||
     (gameBoard[2] === 'o' && gameBoard[5] === 'o' && gameBoard[8] === 'o')) {
     $('.message').text('O Won!!').hide(3000)
+    currentPlayer = 'x'
     events.gameOver()
-    $('.box').off('click', onPlay)
+    gameOver = true
+    // $('.box').off('click', onPlay)
     // console.log('O wins!')
   } else if (
     gameBoard[0] !== '' && gameBoard[1] !== '' && gameBoard[2] !== '' &&
     gameBoard[3] !== '' && gameBoard[4] !== '' && gameBoard[5] !== '' &&
     gameBoard[6] !== '' && gameBoard[7] !== '' && gameBoard[8] !== '') {
     $('.message').text('It\'s a tie!!').hide(3000)
+    currentPlayer = 'x'
     events.gameOver()
-    $('.box').off('click', onPlay)
+    gameOver = true
+
+  //  $('.box').off('click', onPlay)
     // console.log('It/s a tie!')
-  }
+  } // else {
+  //   $('.box').on('click', onPlay)
+  // }
 }
 
 const addHandlers = () => {
@@ -93,12 +106,14 @@ const addHandlers = () => {
     $('.message').text('Sign in success').hide(3000)
   })
   $('#start-game').submit(e => {
+    // $('#game-history').on(events.getGames)
+  //  $('.box').on('click', onPlay)
     $('.container').show()
     $('.box').empty()
     $('.message').empty().show()
     gameBoard = ['', '', '', '', '', '', '', '', '']
+    gameOver = false
     console.log(gameBoard)
-    // $('.box').on('click', onPlay)
   })
   $('#sign-out').submit(e => {
     $('.message').text('Sign out success').hide(3000)
