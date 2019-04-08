@@ -28,17 +28,17 @@
       <input type="submit" value="Sign in">
     </form>
 
-    <form id="change-password">
+    <form class="hidden" id="change-password">
   <input type="password" name="passwords[old]" placeholder="Old password">
   <input type="password" name="passwords[new]" placeholder="New password">
   <input type="submit" value="Change password">
 </form>
 
-<form id="sign-out">
+<form class="hidden" id="sign-out">
     <input type="submit" value="Sign out">
   </form>
 
-  <form id="game-history">
+  <form class="hidden" id="game-history">
       <input type="submit" value="See games history">
     </form>
 
@@ -65,7 +65,7 @@
         </div>
       </div> -->
 
-      <div class="container embed-responsive embed-responsive-1by1 gamearea">
+      <div class="hidden container embed-responsive embed-responsive-1by1 gamearea">
         <div class="embed-responsive-item gameboard">
           <div data-id="0" class="col-4 box"></div>
           <div data-id="1" class="col-4 box"></div>
@@ -79,7 +79,7 @@
         </div>
       </div>
 
-        <form id="start-game">
+        <form class="hidden" id="start-game">
             <input type="submit" value="New game">
           </form>
 
