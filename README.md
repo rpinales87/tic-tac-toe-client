@@ -32,10 +32,10 @@ As with any project day one was all about planning and setting everything up, af
 ##### Wireframes
 _______________________
 
-This are mu initial wireframes I used this to give an idea in how the final product should look.
+These are my initial wireframes I used this to give an idea in how the final product should look.
 
-![alt text](https://github.com/rpinales87/tic-tac-toe-client/tree/master/public/laptop1.jpg)
-![alt text](https://github.com/rpinales87/tic-tac-toe-client/tree/master/public/laptop2.jpg)
+![alt text](https://github.com/rpinales87/tic-tac-toe-client/blob/master/public/laptop1.jpg)
+![alt text](https://github.com/rpinales87/tic-tac-toe-client/blob/master/public/laptop2.jpg)
 ### Development Process
 _____
 
