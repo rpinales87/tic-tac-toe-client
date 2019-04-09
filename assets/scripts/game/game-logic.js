@@ -1,5 +1,4 @@
 const events = require('./events')
-// const store = require('../store')
 
 let currentPlayer = 'x'
 let gameOver = false
@@ -29,9 +28,7 @@ const onPlay = event => {
     currentPlayer = 'x'
   } else if ($(event.target).text() !== '') {
     $('.message').text('Invalid move')
-    // return 'Invalid move!'
   }
-  // events.playerMove(index, currentPlayer)
 }
 
 const winner = event => {
@@ -47,8 +44,6 @@ const winner = event => {
     currentPlayer = 'x'
     events.gameOver()
     gameOver = true
-  //  $('.box').off('click', onPlay)
-    // console.log('X wins!')
   } else if (
     (gameBoard[0] === 'o' && gameBoard[1] === 'o' && gameBoard[2] === 'o') ||
     (gameBoard[3] === 'o' && gameBoard[4] === 'o' && gameBoard[5] === 'o') ||
@@ -62,8 +57,6 @@ const winner = event => {
     currentPlayer = 'x'
     events.gameOver()
     gameOver = true
-    // $('.box').off('click', onPlay)
-    // console.log('O wins!')
   } else if (
     gameBoard[0] !== '' && gameBoard[1] !== '' && gameBoard[2] !== '' &&
     gameBoard[3] !== '' && gameBoard[4] !== '' && gameBoard[5] !== '' &&
@@ -72,12 +65,7 @@ const winner = event => {
     currentPlayer = 'x'
     events.gameOver()
     gameOver = true
-
-  //  $('.box').off('click', onPlay)
-    // console.log('It/s a tie!')
-  } // else {
-  //   $('.box').on('click', onPlay)
-  // }
+  }
 }
 
 const addHandlers = () => {
@@ -85,18 +73,14 @@ const addHandlers = () => {
   $('.box').on('click', winner)
   $('#start-game').on('submit', events.onCreateGame)
   $('#game-history').on('submit', events.getGames)
-  // $('#game-history').hide()
-  // $('#game-history').submit(e => {
-  //   $('.message').text('You\'ve played ' + store.games.length + ' games.')
-  // })
-  // $('.container').hide()
-  // $('#change-password').hide()
-  //  $('#sign-out').hide()
-  // $('#start-game').hide()
   $('#sign-up').submit(e => {
-    $('.message').text('Sign up success').hide(3000)
+    $('.message').text('Sign up successfuly, please log in').hide(3000)
+  })
+  $('#game-history').submit(e => {
+    $('.history').show()
   })
   $('#sign-in').submit(e => {
+    $('.history').show()
     $('#sign-in').hide()
     $('#sign-up').hide()
     $('#sign-out').show()
@@ -106,8 +90,6 @@ const addHandlers = () => {
     $('.message').text('Sign in success').hide(3000)
   })
   $('#start-game').submit(e => {
-    // $('#game-history').on(events.getGames)
-  //  $('.box').on('click', onPlay)
     $('.container').show()
     $('.box').empty()
     $('.message').empty().show()
@@ -123,7 +105,6 @@ const addHandlers = () => {
     $('#sign-up').show()
     $('.container').hide()
     $('#sign-out').hide()
-    // $('.message').empty()
     $('#game-history').hide()
   })
 }

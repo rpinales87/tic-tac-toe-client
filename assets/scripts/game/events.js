@@ -36,7 +36,7 @@ const getGames = () => {
       ui.createSuccess()
       store.games = response.games
       $('#game-history').submit(e => {
-        $('.history').text('You\'ve played ' + store.games.length + ' games.').hide(3000)
+        $('.history').text('You\'ve played ' + store.games.length + ' games.').hide(10000)
       })
       console.log('get store is:', store)
     // console.log('response on create is: ', response)

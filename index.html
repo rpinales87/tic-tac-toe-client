@@ -23,14 +23,14 @@
   </form>
 
   <form id="sign-in">
-      <input type="email" name="credentials[email]" placeholder="Email">
-      <input type="password" name="credentials[password]" placeholder="Password">
+      <input required type="email" name="credentials[email]" placeholder="Email">
+      <input required type="password" name="credentials[password]" placeholder="Password">
       <input type="submit" value="Sign in">
     </form>
 
     <form class="hidden" id="change-password">
-  <input type="password" name="passwords[old]" placeholder="Old password">
-  <input type="password" name="passwords[new]" placeholder="New password">
+  <input required type="password" name="passwords[old]" placeholder="Old password">
+  <input required type="password" name="passwords[new]" placeholder="New password">
   <input type="submit" value="Change password">
 </form>
 
