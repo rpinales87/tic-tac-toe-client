@@ -10,7 +10,7 @@ const onCreateGame = event => {
     .then(response => {
       ui.createSuccess()
       store.game = response.game
-      console.log('store is:', store)
+      // console.log('store is:', store)
       // console.log('response on create is: ', response)
     })
     .catch(ui.createFaliure)
@@ -38,7 +38,7 @@ const getGames = () => {
       $('#game-history').submit(e => {
         $('.history').text('You\'ve played ' + store.games.length + ' games.').hide(10000)
       })
-      console.log('get store is:', store)
+      // console.log('get store is:', store)
     // console.log('response on create is: ', response)
     })
     .catch(ui.getGamesFaliure)

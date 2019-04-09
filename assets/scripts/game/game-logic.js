@@ -4,7 +4,7 @@ let currentPlayer = 'x'
 let gameOver = false
 
 let gameBoard = ['', '', '', '', '', '', '', '', '']
-console.log(gameBoard)
+// console.log(gameBoard)
 
 const onPlay = event => {
   if (gameOver === true) {
@@ -13,7 +13,7 @@ const onPlay = event => {
   const index = $(event.target).data('id')
   // console.log(index)
   gameBoard[index] = currentPlayer
-  console.log(gameBoard)
+  // console.log(gameBoard)
   if (currentPlayer === 'x' && $(event.target).text() === '') {
     $(event.target).text(currentPlayer)
     events.playerMove(index, currentPlayer)
@@ -95,7 +95,7 @@ const addHandlers = () => {
     $('.message').empty().show()
     gameBoard = ['', '', '', '', '', '', '', '', '']
     gameOver = false
-    console.log(gameBoard)
+    // console.log(gameBoard)
   })
   $('#sign-out').submit(e => {
     $('.message').text('Sign out success').hide(3000)
