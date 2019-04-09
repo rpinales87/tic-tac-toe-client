@@ -1,4 +1,4 @@
-![alt text](https://github.com/rpinales87/tic-tac-toe-client/blob/development/public/tictactoe.jpg)# Tic Tac Toe
+ # Tic Tac Toe
 _______________________
 
 Tic tac toe is a game you can learn in seconds and master in minutes, this is my take on the old time classic game of Xs and Os.
@@ -29,6 +29,13 @@ As with any project day one was all about planning and setting everything up, af
 8. As a user, I want to be able to start a new game at any time.
 9. As a user, I want to be able to get the amount of games played by me.
 
+##### Wireframes
+_______________________
+
+This are mu initial wireframes I used this to give an idea in how the final product should look.
+
+![alt text](https://github.com/rpinales87/tic-tac-toe-client/tree/master/public/laptop1.jpg)
+![alt text](https://github.com/rpinales87/tic-tac-toe-client/tree/master/public/laptop2.jpg)
 ### Development Process
 _____
 
