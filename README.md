@@ -1,4 +1,4 @@
-![alt text](https://github.com/rpinales87/tic-tac-toe-client/tree/master/public/tictactoe.jpg)# Tic Tac Toe
+![alt text](https://github.com/rpinales87/tic-tac-toe-client/blob/development/public/tictactoe.jpg)# Tic Tac Toe
 _______________________
 
 Tic tac toe is a game you can learn in seconds and master in minutes, this is my take on the old time classic game of Xs and Os.
@@ -41,7 +41,7 @@ In all my development process I focused on small parts of the app instead of wor
 ### Future updates/interactions
 ____
 
--Fix bug where you need to click “See games history” twice to see the user game history on screen.
--Fix sign in bug- changing view when logging in with wrong password, resulting in the user getting “stuck” in the signed in view.
--Add player vs computer functionality
--Add full responsive design for different screen sizes.
+- Fix bug where you need to click “See games history” twice to see the user game history on screen.
+- Fix sign in bug- changing view when logging in with wrong password, resulting in the user getting “stuck” in the signed in view.
+- Add player vs computer functionality
+- Add full responsive design for different screen sizes.
