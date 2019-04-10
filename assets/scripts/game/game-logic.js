@@ -76,9 +76,9 @@ const addHandlers = () => {
   $('#sign-up').submit(e => {
     $('.message').text('Sign up successfuly, please log in').hide(3000)
   })
-  $('#game-history').submit(e => {
-    $('.history').show()
-  })
+  // $('#game-history').submit(e => {
+  //   $('.history').show()
+  // })
   $('#sign-in').submit(e => {
     $('.history').show()
     $('#sign-in').hide()

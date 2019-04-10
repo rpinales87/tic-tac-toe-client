@@ -32,15 +32,13 @@ const gameOver = () => {
 const getGames = () => {
   event.preventDefault()
   api.getGames()
-    .then(response => {
-      ui.createSuccess()
-      store.games = response.games
-      $('#game-history').submit(e => {
-        $('.history').text('You\'ve played ' + store.games.length + ' games.').hide(10000)
-      })
-      // console.log('get store is:', store)
+    .then(ui.getGamesSuccess)
+  // store.games = response.games
+  // $('#game-history').submit(e => {
+  //   $('.history').text('You\'ve played ' + store.games.length + ' games.').hide(10000)
+  // })
+  // console.log('get store is:', store)
     // console.log('response on create is: ', response)
-    })
     .catch(ui.getGamesFaliure)
 }
 
