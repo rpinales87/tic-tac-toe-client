@@ -1,4 +1,5 @@
 const events = require('./events')
+const authEvents = require('../auth/events')
 
 let currentPlayer = 'x'
 let gameOver = false
@@ -71,24 +72,25 @@ const winner = event => {
 const addHandlers = () => {
   $('.box').on('click', onPlay)
   $('.box').on('click', winner)
+  $('#sign-in').on('submit', authEvents.onSignIn)
   $('#start-game').on('submit', events.onCreateGame)
   $('#game-history').on('submit', events.getGames)
-  $('#sign-up').submit(e => {
-    $('.message').text('Sign up successfuly, please log in').hide(3000)
-  })
+  // $('#sign-up').submit(e => {
+  //   $('.message').text('Sign up successfuly, please log in').hide(3000)
+  //  })
   // $('#game-history').submit(e => {
   //   $('.history').show()
   // })
-  $('#sign-in').submit(e => {
-    $('.history').show()
-    $('#sign-in').hide()
-    $('#sign-up').hide()
-    $('#sign-out').show()
-    $('#game-history').show()
-    $('#change-password').show()
-    $('#start-game').show()
-    $('.message').text('Sign in success').hide(3000)
-  })
+  // $('#sign-in').submit(e => {
+  //   $('.history').show()
+  //   $('#sign-in').hide()
+  //   $('#sign-up').hide()
+  //   $('#sign-out').show()
+  //   $('#game-history').show()
+  //   $('#change-password').show()
+  //   $('#start-game').show()
+  //   $('.message').text('Sign in success').hide(3000)
+  // })
   $('#start-game').submit(e => {
     $('.container').show()
     $('.box').empty()
@@ -98,7 +100,7 @@ const addHandlers = () => {
     // console.log(gameBoard)
   })
   $('#sign-out').submit(e => {
-    $('.message').text('Sign out success').hide(3000)
+  //  $('.message').text('Sign out success').hide(3000)
     $('#change-password').hide()
     $('#start-game').hide()
     $('#sign-in').show()

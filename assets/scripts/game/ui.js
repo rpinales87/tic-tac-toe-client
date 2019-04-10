@@ -33,9 +33,9 @@ const gameOverFaliure = function (response) {
 const getGamesSuccess = function (response) {
   // console.log('get games success:', response)
   store.games = response.games
-//  $('#game-history').submit(e => {
-    $('.history').text('You\'ve played ' + response.games.length + ' games.')
-    console.log(store)
+  //  $('#game-history').submit(e => {
+  $('.history').text('You\'ve played ' + response.games.length + ' games.')
+  console.log(store)
 //  })
 }
 
