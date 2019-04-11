@@ -5,10 +5,14 @@ const store = require('../store')
 const createSuccess = function (response) {
   // api.getGames()
   // console.log('createSuccess is:', response)
+  $('.container').show()
+  $('.box').empty()
+  $('.message').text('X starts the game').show()
+  $('.history').empty()
 }
 
 const createFaliure = function (response) {
-  $('#message').text('Something went wrong could\'t start game')
+  $('#message').text('Something went wrong, could\'t start game')
   // console.log('err: response')
 }
 
@@ -17,7 +21,7 @@ const updateSuccess = function (response) {
 }
 
 const updateFaliure = function (response) {
-  $('#message').text('Something went wrong couldn\'t update the play.')
+  $('#message').text('Something went wrong, couldn\'t update the play.')
   // console.log('err: response')
 }
 

@@ -23,7 +23,7 @@ const signInSuccess = function (data) {
   $('#game-history').show()
   $('#change-password').show()
   $('#start-game').show()
-  $('.message').text('Sign in success.').hide(3000)
+  $('.message').text('Sign in success.').hide(950)
   $('form').trigger('reset')
 }
 
@@ -35,12 +35,14 @@ const signInFailure = function (data) {
 
 const changePasswordSuccess = function (data) {
 //  console.log('change password success ran with the data: ', data)
+  $('.change-password').text('Password successfuly updated.').hide(3000)
   $('form').trigger('reset')
   // store.user = data.user
 }
 
 const changePasswordFailure = function (data) {
 //  console.log('change password failure ran with the data: ', data)
+  $('.change-password').text('Something went wrong, please try again.')
   $('form').trigger('reset')
 }
 
@@ -49,6 +51,7 @@ const signOutSuccess = function () {
   $('.message').empty().show()
   $('.history').empty().show()
   $('form').trigger('reset')
+  $('.change-password').empty().show()
   store.user = null
 }
 
