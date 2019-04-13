@@ -9,6 +9,7 @@ const createSuccess = function (response) {
   $('.box').empty()
   $('.message').text('X starts the game').show()
   $('.history').empty()
+  $('.change-password').empty()
 }
 
 const createFaliure = function (response) {
