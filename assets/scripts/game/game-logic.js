@@ -101,7 +101,7 @@ const addHandlers = () => {
     // console.log(gameBoard)
   })
   $('#sign-out').submit(e => {
-  //  $('.message').text('Sign out success').hide(3000)
+    $('.history').text('Sign out success').hide(3000)
     $('#change-password').hide()
     $('#start-game').hide()
     $('#sign-in').show()

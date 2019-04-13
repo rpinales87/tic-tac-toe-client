@@ -12,7 +12,7 @@ const createSuccess = function (response) {
 }
 
 const createFaliure = function (response) {
-  $('#message').text('Something went wrong, could\'t start game')
+  $('.message').text('Something went wrong, could\'t start game')
   // console.log('err: response')
 }
 
@@ -21,16 +21,17 @@ const updateSuccess = function (response) {
 }
 
 const updateFaliure = function (response) {
-  $('#message').text('Something went wrong, couldn\'t update the play.')
+  $('.message').text('Something went wrong, couldn\'t update the play.')
   // console.log('err: response')
 }
 
 const gameOverSuccess = function (response) {
+  $('.history').text('Game over, please start a new game.')
   // console.log('game over success:', response)
 }
 
 const gameOverFaliure = function (response) {
-  $('#message').text('Something went wrong couldn\'t end the game.')
+  $('.message').text('Something went wrong couldn\'t end the game.')
   // console.log('err: response')
 }
 

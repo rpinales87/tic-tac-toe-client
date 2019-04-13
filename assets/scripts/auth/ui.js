@@ -16,7 +16,7 @@ const signUpFailure = function (data) {
 const signInSuccess = function (data) {
 //  console.log('sign in success ran with the data: ', data)
   store.user = data.user
-  $('.history').show()
+  $('.history').empty().show()
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#sign-out').show()
@@ -49,7 +49,7 @@ const changePasswordFailure = function (data) {
 const signOutSuccess = function () {
 //  console.log('Sign out successfull!')
   $('.message').empty().show()
-  $('.history').empty().show()
+  // $('.history').empty().show()
   $('form').trigger('reset')
   $('.change-password').empty().show()
   store.user = null
