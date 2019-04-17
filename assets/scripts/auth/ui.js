@@ -13,6 +13,7 @@ const signUpFailure = function (data) {
   $('form').trigger('reset')
 }
 
+// events handlers for successfull sign in
 const signInSuccess = function (data) {
 //  console.log('sign in success ran with the data: ', data)
   store.user = data.user
@@ -49,7 +50,6 @@ const changePasswordFailure = function (data) {
 const signOutSuccess = function () {
 //  console.log('Sign out successfull!')
   $('.message').empty().show()
-  // $('.history').empty().show()
   $('form').trigger('reset')
   $('.change-password').empty().show()
   store.user = null

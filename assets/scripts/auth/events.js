@@ -38,14 +38,12 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+// event handlers
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  // $('#change-password').submit(e => {
-  //  $('.message').text('Password successfuly changed').hide(3000)
-//  })
 }
 
 module.exports = {

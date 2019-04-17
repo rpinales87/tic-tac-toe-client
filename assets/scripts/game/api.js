@@ -2,6 +2,7 @@
 const store = require('../store')
 const config = require('../config')
 
+// API call to create a new game for signed in user.
 const createGame = (data) => {
   // console.log('data is:', data)
   return $.ajax({
@@ -14,6 +15,7 @@ const createGame = (data) => {
   })
 }
 
+// API call to update game with player move.
 const playerMove = (index, currentPlayer) => {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
@@ -32,6 +34,7 @@ const playerMove = (index, currentPlayer) => {
   })
 }
 
+// API call to update the game status after game is over.
 const gameOver = () => {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
@@ -47,6 +50,7 @@ const gameOver = () => {
   })
 }
 
+// API call to get history of played games by a registered user.
 const getGames = (data) => {
 //  console.log('data is:', data)
   return $.ajax({

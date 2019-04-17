@@ -1,12 +1,13 @@
 const events = require('./events')
 const authEvents = require('../auth/events')
 
+// set default player, game status and gameboard array
 let currentPlayer = 'x'
 let gameOver = false
-
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 // console.log(gameBoard)
 
+// game logic, update current player and place Xs and Os in the board.
 const onPlay = event => {
   if (gameOver === true) {
     return
@@ -32,6 +33,7 @@ const onPlay = event => {
   }
 }
 
+// create winning conditions, update game status when any of those conditions are true.
 const winner = event => {
   if ((gameBoard[0] === 'x' && gameBoard[1] === 'x' && gameBoard[2] === 'x') ||
       (gameBoard[3] === 'x' && gameBoard[4] === 'x' && gameBoard[5] === 'x') ||
@@ -75,26 +77,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#start-game').on('submit', events.onCreateGame)
   $('#game-history').on('submit', events.getGames)
-  // $('#sign-up').submit(e => {
-  //   $('.message').text('Sign up successfuly, please log in').hide(3000)
-  //  })
-  // $('#game-history').submit(e => {
-  //   $('.history').show()
-  // })
-  // $('#sign-in').submit(e => {
-  //   $('.history').show()
-  //   $('#sign-in').hide()
-  //   $('#sign-up').hide()
-  //   $('#sign-out').show()
-  //   $('#game-history').show()
-  //   $('#change-password').show()
-  //   $('#start-game').show()
-  //   $('.message').text('Sign in success').hide(3000)
-  // })
   $('#start-game').submit(e => {
-    // $('.container').show()
-    // $('.box').empty()
-    // $('.message').empty().show()
     currentPlayer = 'x'
     gameBoard = ['', '', '', '', '', '', '', '', '']
     gameOver = false

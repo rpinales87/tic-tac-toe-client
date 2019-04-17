@@ -1,15 +1,12 @@
-// const api = require('./api')
-// const gameLogic = require('./game-logic.js')
 const store = require('../store')
 
 const createSuccess = function (response) {
-  // api.getGames()
   // console.log('createSuccess is:', response)
   $('.container').show()
   $('.box').empty()
   $('.message').text('X starts the game').show()
   $('.history').empty()
-  $('.change-password').empty()
+  $('.change-password').empty().show()
 }
 
 const createFaliure = function (response) {
@@ -39,10 +36,8 @@ const gameOverFaliure = function (response) {
 const getGamesSuccess = function (response) {
   // console.log('get games success:', response)
   store.games = response.games
-  //  $('#game-history').submit(e => {
   $('.history').text('You\'ve played ' + response.games.length + ' games.')
   console.log(store)
-//  })
 }
 
 const getGamesFaliure = function (response) {

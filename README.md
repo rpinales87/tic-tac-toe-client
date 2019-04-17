@@ -47,8 +47,6 @@ In all my development process I focused on small parts of the app instead of wor
 
 ### Future updates/interactions
 ____
-
-- Fix bug where you need to click “See games history” twice to see the user game history on screen.
-- Fix sign in bug- changing view when logging in with wrong password, resulting in the user getting “stuck” in the signed in view.
-- Add player vs computer functionality
+- Add more style.
+- Add player vs computer functionality.
 - Add full responsive design for different screen sizes.

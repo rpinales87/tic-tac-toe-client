@@ -2,6 +2,7 @@
 const config = require('../config')
 const store = require('../store')
 
+// API call to create a new user account
 const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -10,6 +11,7 @@ const signUp = function (data) {
   })
 }
 
+// API call to sign in a registered user.
 const signIn = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
@@ -18,6 +20,7 @@ const signIn = function (data) {
   })
 }
 
+// API call to update password of a registered user
 const changePassword = function (data) {
   return $.ajax({
     url: config.apiUrl + '/change-password',
@@ -29,6 +32,7 @@ const changePassword = function (data) {
   })
 }
 
+// API call to sign out a logged in user
 const signOut = function () {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
